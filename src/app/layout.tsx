@@ -13,8 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wordle Clone",
-  description: "A Wordle clone built with Next.js and Tailwind CSS",
+  title: "Wordle Clone - Free Word Guessing Puzzle Game",
+  description:
+    "Play Wordle Clone, a free word guessing puzzle game. Guess the hidden 5-letter word in 6 tries with color-coded hints. Built with Next.js.",
+  openGraph: {
+    title: "Wordle Clone - Free Word Guessing Puzzle Game",
+    description:
+      "Play Wordle Clone, a free word guessing puzzle game. Guess the hidden 5-letter word in 6 tries with color-coded hints. Built with Next.js.",
+    images: ["/og-image.png"],
+    url: "https://wordle-clone-psi-ten.vercel.app",
+  },
+  alternates: {
+    canonical: "https://wordle-clone-psi-ten.vercel.app",
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +38,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "Wordle Clone",
+              description:
+                "A free word guessing puzzle game. Guess the hidden 5-letter word in 6 tries with color-coded hints.",
+              url: "https://wordle-clone-psi-ten.vercel.app",
+              applicationCategory: "Game",
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
