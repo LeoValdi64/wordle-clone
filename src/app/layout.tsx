@@ -43,12 +43,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebApplication",
+              "@type": "VideoGame",
               name: "Wordle Clone",
               description:
                 "A free word guessing puzzle game. Guess the hidden 5-letter word in 6 tries with color-coded hints.",
               url: "https://wordle-clone-psi-ten.vercel.app",
+              genre: "Puzzle",
+              gamePlatform: "Web Browser",
               applicationCategory: "Game",
+              operatingSystem: "Any",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
             }),
           }}
         />
